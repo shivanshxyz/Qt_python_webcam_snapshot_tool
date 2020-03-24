@@ -72,4 +72,17 @@ class MainWindow(QMainWindow):
         self.current_camera_name = self.available_cameras[i].description()
         self.save_seq = 0
 
-        
+    def take_photo(self):
+        timestamp = time.strftime("%d-%b-%Y-%H_%M_%S")
+        self.capture.capture(os.path.join(self.save_path, "%s-%04d-%s.jpg" % (
+            self.current_camera_name,
+            self.save_seq,
+            timestamp
+        )))
+        self.save_seq += 1
+
+    def change_folder(self):
+        path = QFileDialog.getExistingDirectory(self, "Snapshot save location", "")
+        if path:
+            self.save_path = path
+            self.save_seq = 0
