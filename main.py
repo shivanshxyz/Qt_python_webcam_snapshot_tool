@@ -37,12 +37,12 @@ class MainWindow(QMainWindow):
         camera_toolbar.setIconSize(QSize(14, 14))
         self.addToolBar(camera_toolbar)
 
-        photo_action = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+        photo_action = QAction(QIcon(os.path.join('icons', 'camera-black.png')), "Take photo...", self)
         photo_action.setStatusTip("Take photo of current view")
         photo_action.triggered.connect(self.take_photo)
         camera_toolbar.addAction(photo_action)
 
-        change_folder_action = QAction(QIcon(os.path.join('images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
+        change_folder_action = QAction(QIcon(os.path.join('icons', 'blue-folder-horizontal-open.png')), "Change save location...", self)
         change_folder_action.setStatusTip("Change folder where photos are saved.")
         change_folder_action.triggered.connect(self.change_folder)
         camera_toolbar.addAction(change_folder_action)
