@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         camera_toolbar.addWidget(camera_selector)
 
 
-        self.setWindowTitle("NSAViewer")
+        self.setWindowTitle("CAMERA")
         self.show()
 
     def select_camera(self, i):
