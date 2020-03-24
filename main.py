@@ -86,3 +86,19 @@ class MainWindow(QMainWindow):
         if path:
             self.save_path = path
             self.save_seq = 0
+
+    def alert(self, s):
+        """
+        Handle errors coming from QCamera dn QCameraImageCapture by displaying alerts.
+        """
+        err = QErrorMessage(self)
+        err.showMessage(s)
+
+
+if __name__ == '__main__':
+
+    app = QApplication(sys.argv)
+    app.setApplicationName("NSAViewer")
+
+    window = MainWindow()
+    app.exec_()
