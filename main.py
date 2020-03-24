@@ -98,7 +98,7 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
-    app.setApplicationName("NSAViewer")
+    app.setApplicationName("CAMERA")
 
     window = MainWindow()
     app.exec_()
