@@ -41,3 +41,19 @@ class MainWindow(QMainWindow):
         photo_action.setStatusTip("Take photo of current view")
         photo_action.triggered.connect(self.take_photo)
         camera_toolbar.addAction(photo_action)
+
+        change_folder_action = QAction(QIcon(os.path.join('images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
+        change_folder_action.setStatusTip("Change folder where photos are saved.")
+        change_folder_action.triggered.connect(self.change_folder)
+        camera_toolbar.addAction(change_folder_action)
+
+
+        camera_selector = QComboBox()
+        camera_selector.addItems([c.description() for c in self.available_cameras])
+        camera_selector.currentIndexChanged.connect( self.select_camera )
+
+        camera_toolbar.addWidget(camera_selector)
+
+
+        self.setWindowTitle("NSAViewer")
+        self.show()
